@@ -36,22 +36,6 @@ class MainActivity : AppCompatActivity() {
             CustomDialog(this).show()
         }
         btn_show_notification.setOnClickListener {
-//            val fsIntent = Intent(this, FullScreenActivity::class.java)
-//            val builder = NotificationCompat.Builder(this, CHANNEL_ID)
-//                .setSmallIcon(R.mipmap.ic_launcher_round)
-//                .setContentTitle("TEST TITLE")
-//                .setContentText("TEST CONTENT")
-//                .setPriority(NotificationCompat.PRIORITY_HIGH)
-//                .setFullScreenIntent(
-//                    PendingIntent.getActivity(this, 0, fsIntent, 0),
-//                    true)
-//
-//            val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-//            with(notificationManager) {
-//                buildChannel()
-//                val notification = builder.build()
-//                notify(0, notification)
-//            }
             val title = "Title"
             val description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             val builder = NotificationCompat.Builder(this, CHANNEL_ID)
@@ -66,6 +50,9 @@ class MainActivity : AppCompatActivity() {
                 val notification = builder.build()
                 notify(0, notification)
             }
+        }
+        btn_show_activity_dialog.setOnClickListener {
+            startActivity(Intent(this, DialogActivity::class.java))
         }
     }
     private fun Context.getFullScreenIntent(): PendingIntent {

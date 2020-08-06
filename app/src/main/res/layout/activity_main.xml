@@ -37,9 +37,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:text="Show Notification"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_show_activity_dialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_show_custom_dialog" />
+
+    <Button
+        android:id="@+id/btn_show_activity_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Show Activity Dialog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_show_notification"
+        app:layout_constraintStart_toStartOf="@+id/btn_show_notification"
+        app:layout_constraintTop_toBottomOf="@+id/btn_show_notification" />
 </androidx.constraintlayout.widget.ConstraintLayout>

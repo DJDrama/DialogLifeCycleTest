@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".FullScreenActivity" />
-
+    <activity android:name=".DialogActivity"
+        android:theme="@android:style/Theme.Dialog"/>
     </application>
 
 </manifest>
