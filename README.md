@@ -9,7 +9,7 @@ onPause Not Called
 3) Dangerous Permission Dialog(Actually it's an UI)
 onPause Called
 
-4) DialogActivity (activity using @android:style/Theme.Dialog theme in AndroidManifest)
+4) DialogActivity (activity using @android:style/Theme.Dialog theme in AndroidManifest) <br />
 onPause Called(since startactivity using an intent)
 
 If your app does not have the requested permissions the user will be presented with UI for accepting them. After the user has accepted or rejected the requested permissions you will receive a callback reporting whether the permissions were granted or not. Your activity has to implement ActivityCompat.OnRequestPermissionsResultCallback and the results of permission requests will be delivered to its onRequestPermissionsResult(int, String[], int[]) method.
