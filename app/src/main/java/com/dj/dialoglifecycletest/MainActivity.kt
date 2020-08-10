@@ -9,8 +9,12 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.view.ViewGroup
+import android.view.WindowManager
+import android.view.WindowManager.LayoutParams.FLAG_FULLSCREEN
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import kotlinx.android.synthetic.main.activity_main.*
@@ -53,6 +57,12 @@ class MainActivity : AppCompatActivity() {
         }
         btn_show_activity_dialog.setOnClickListener {
             startActivity(Intent(this, DialogActivity::class.java))
+        }
+        button_full_screen_dialog.setOnClickListener {
+            val dialog = FullScreenDialog(this)
+            dialog.show()
+            val window = dialog.window
+            window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT)
         }
     }
     private fun Context.getFullScreenIntent(): PendingIntent {

@@ -3,15 +3,17 @@ package com.dj.dialoglifecycletest
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
-import kotlinx.android.synthetic.main.dialog_custom.*
+import android.view.Window
+import android.view.WindowManager
+import kotlinx.android.synthetic.main.dialog_custom_full_screen.*
 
-class CustomDialog(context: Context) : Dialog(context) {
+class FullScreenDialog(context: Context) : Dialog(context) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //cannot cancel unless pressing the confirm button
+        //set dialog to full screen
         setCanceledOnTouchOutside(false)
         setCancelable(false)
-        setContentView(R.layout.dialog_custom)
+        setContentView(R.layout.dialog_custom_full_screen)
         btn_confirm.setOnClickListener {
             dismiss()
         }
